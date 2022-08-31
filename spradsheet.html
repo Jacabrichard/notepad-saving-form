@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Save Web Form Data to Spreadsheets</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script>
+		function SubForm() {
+			$.ajax({
+				url: "https://api.apispreadsheets.com/data/mIiryoUCBw88HWSn/",
+				type: "post",
+				Formdata: $("#myForm").serializeArray(),
+				success: function () {
+					alert("Form Data Submitted :)")
+				},
+				error: function () {
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<form id="myForm">
+		<input id="myInput" type="text" placeholder="Search..">
+		<br><br>		
+		<label for="fullname">fullname</label>
+		<input name="fullname" type="text" id="fullname">
+		<br>
+		<br>
+		<label for="email id">email id</label>
+		<input name="email id" type="email id"  id="email id">
+		 <br>
+		<br>
+		<label for="reg">registration number</label>
+		<input name="registration number" id="reg" type="number">
+		<br>
+		<br>
+		<label for="add">address</label>
+		<input name="address" id="add">
+		<br>
+		<br>
+		<label for="city">city</label>
+		<input name="city" type="text" id="city">
+		<br>
+		<br>
+	</form>
+	<button onclick='SubForm()'>Submit</button>
+</body>
+</html>
+
+
+<!-- <hr>
+<hr>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/mIiryoUCBw88HWSn/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+<body>
+  <form id="myForm">
+    <label>Full Name</label>
+    <br>
+    <input name="full_name" >
+    <br>
+    <label>Email</label>
+    <br>
+    <input name="email" />
+    <br>
+    <label>Age</label>
+    <br>
+    <input type="radio" id="age" name="Gender" value="Male">MAle<br>
+    <input type="radio" id="age" name="Gender" value="Female">Female<br>
+    <br>
+    <label>Message</label>
+    <br>
+    <textarea name="message">
+    </textarea>
+    <br>
+    <br>
+  </form>
+  <button onclick="SubForm()">Submit</button>
+</body>
+</html> -->
